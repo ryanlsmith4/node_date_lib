@@ -12,6 +12,7 @@
     -   [justSecs][8]
     -   [format][9]
         -   [Parameters][10]
+        -   [Examples][11]
 
 ## MyDate
 
@@ -20,45 +21,45 @@ This class creates a Date obj out of an args array
 ### Parameters
 
 -   `args` **...any** 
--   `input` **[Date][11]** a date in various formats
+-   `input` **[Date][12]** a date in various formats
 
-Returns **[Date][11]** an instantiation of the Date class in js as an object
+Returns **[Date][12]** an instantiation of the Date class in js as an object
 
 ### year
 
 This method on my Date class returns the year of the date formatted as a string
 
-Returns **[String][12]** formated year
+Returns **[String][13]** formated year
 
 ### month
 
 This method on my Date class returns the month of the date formatted as a string
 
-Returns **[String][12]** formated month
+Returns **[String][13]** formated month
 
 ### day
 
 This method on my Date class returns the day of the date formatted as a string
 
-Returns **[String][12]** formated day
+Returns **[String][13]** formated day
 
 ### justHours
 
 This method on my Date class returns the hour of the date formatted as a string
 
-Returns **[String][12]** formated hour
+Returns **[String][13]** formated hour
 
 ### justMins
 
 This method on my Date class returns the mins of the date formatted as a string
 
-Returns **[String][12]** formated mins
+Returns **[String][13]** formated mins
 
 ### justSecs
 
 This method on my Date class returns the year of the date formatted as a string
 
-Returns **[String][12]** formated year
+Returns **[String][13]** formated year
 
 ### format
 
@@ -68,7 +69,13 @@ This method on my Date class returns the year of the date formatted as a string
 
 -   `args` **...any** 
 
-Returns **[String][12]** formated Date with optional params
+#### Examples
+
+```javascript
+MyDate.format('y/m/d') => 2017/Jan/2 && MyDate.format('H:I:S') => 03:04:05
+```
+
+Returns **[String][13]** formated Date with optional params
 
 [1]: #mydate
 
@@ -90,6 +97,8 @@ Returns **[String][12]** formated Date with optional params
 
 [10]: #parameters-1
 
-[11]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date
+[11]: #examples
 
-[12]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+[12]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date
+
+[13]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
