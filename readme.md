@@ -13,6 +13,8 @@
     -   [format][9]
         -   [Parameters][10]
         -   [Examples][11]
+    -   [when][12]
+        -   [Examples][13]
 
 ## MyDate
 
@@ -21,45 +23,45 @@ This class creates a Date obj out of an args array
 ### Parameters
 
 -   `args` **...any** 
--   `input` **[Date][12]** a date in various formats
+-   `input` **[Date][14]** a date in various formats
 
-Returns **[Date][12]** an instantiation of the Date class in js as an object
+Returns **[Date][14]** an instantiation of the Date class in js as an object
 
 ### year
 
 This method on my Date class returns the year of the date formatted as a string
 
-Returns **[String][13]** formated year
+Returns **[String][15]** formated year
 
 ### month
 
 This method on my Date class returns the month of the date formatted as a string
 
-Returns **[String][13]** formated month
+Returns **[String][15]** formated month
 
 ### day
 
 This method on my Date class returns the day of the date formatted as a string
 
-Returns **[String][13]** formated day
+Returns **[String][15]** formated day
 
 ### justHours
 
 This method on my Date class returns the hour of the date formatted as a string
 
-Returns **[String][13]** formated hour
+Returns **[String][15]** formated hour
 
 ### justMins
 
 This method on my Date class returns the mins of the date formatted as a string
 
-Returns **[String][13]** formated mins
+Returns **[String][15]** formated mins
 
 ### justSecs
 
 This method on my Date class returns the year of the date formatted as a string
 
-Returns **[String][13]** formated year
+Returns **[String][15]** formated year
 
 ### format
 
@@ -67,7 +69,8 @@ This method on my Date class returns the year of the date formatted as a string
 
 #### Parameters
 
--   `args` **...any** 
+-   `args` **...any**  
+can be in any format 'y/m/d', 'H:I:S', 'h:i:s', 'Y-M-D h:I:S'  to include all or not you choice
 
 #### Examples
 
@@ -75,7 +78,19 @@ This method on my Date class returns the year of the date formatted as a string
 MyDate.format('y/m/d') => 2017/Jan/2 && MyDate.format('H:I:S') => 03:04:05
 ```
 
-Returns **[String][13]** formated Date with optional params
+Returns **[String][15]** formated Date with optional params
+
+### when
+
+This method on my Date class returns a description of 'when' a date will happen
+
+#### Examples
+
+```javascript
+MyDate.when() => todays date - date of constructed date object
+```
+
+Returns **[String][15]** formated Date with the time from today to the constructed date object
 
 [1]: #mydate
 
@@ -99,6 +114,10 @@ Returns **[String][13]** formated Date with optional params
 
 [11]: #examples
 
-[12]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date
+[12]: #when
 
-[13]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+[13]: #examples-1
+
+[14]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date
+
+[15]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String

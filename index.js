@@ -83,11 +83,14 @@ class MyDate {
    */
   format(...args) {
     const date = String(this.date).split(' ');
+
     if (args.length === 0) {
       return `${date[3]} ${date[1]} ${date[2]}`;
     }
+
     const result = [];
     const arr = String(args).split('');
+
     for (let i = 0; i < arr.length; i += 1) {
       switch (arr[i]) {
         case 'Y': // 2019
@@ -155,8 +158,23 @@ class MyDate {
     }
     return result.join('');
   }
+
+  /**
+   * This method on my Date class returns a description of 'when' a date will happen
+   * @method
+   * to include all or not you choice
+   * @returns { String } formated Date with the time from today to the constructed date object
+   * @example MyDate.when() => todays date - date of constructed date object
+   */
+  when() {
+    const date = String(this.date).split(' ');
+    const today = new Date();
+    return this.date - today;
+    // console.log(date);
+    // console.log(today)
+  }
 }
 
-const d = new MyDate();
+const d = new MyDate(2019, 0, 2, 3, 4, 5);
 
-console.log(d.format("Y-M-D h:I:S"));
+console.log(d.when());
