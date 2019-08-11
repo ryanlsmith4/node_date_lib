@@ -76,28 +76,87 @@ class MyDate {
   /**
    * This method on my Date class returns the year of the date formatted as a string
    * @method
-   * @params { String } can be in any format 'y/m/d', 'H:I:S', 'h:i:s', 'Y-M-D h:I:S'
+   * @params { String } can be in any format 'y/m/d', 'H:I:S', 'h:i:s', 'Y-M-D h:I:S' 
+   * to include all or not you choice
    * @returns { String } formated Date with optional params
    * @example MyDate.format('y/m/d') => 2017/Jan/2 && MyDate.format('H:I:S') => 03:04:05
    */
   format(...args) {
     const date = String(this.date).split(' ');
-    const time = date[4].split(':');
-    // console.log(time)
-    const arr = [...args];
-    const option = arr[0];
-    switch (option) {
-      case 'y/m/d':
-        return `${date[3]}/${date[1]}/${parseInt(date[2], 10)}`;
-      case 'H:I:S':
-        return `${time[0]}:${time[1]}:${time[2]}`;
-      case 'h:i:s':
-        return `${parseInt(time[0], 10)}:${parseInt(time[1], 10)}:${parseInt(time[2], 10)}`;
-      case 'Y-M-D h:I:S':
-        return `${date[3]}-${date[1]}-${date[2]} ${parseInt(time[0], 10)}:${time[1]}:${time[2]}`
-      default:
-        return `${date[3]} ${date[1]} ${date[2]}`;
+    if (args.length === 0) {
+      return `${date[3]} ${date[1]} ${date[2]}`;
     }
+    const result = [];
+    const arr = String(args).split('');
+    for (let i = 0; i < arr.length; i += 1) {
+      switch (arr[i]) {
+        case 'Y': // 2019
+          result.push(date[3]);
+          break;
+        case 'y': // 19
+          result.push(date[3]);
+          break;
+        case 'M': { // july
+          result.push(date[1]);
+          break;
+        }
+        case 'm': { // jul
+          result.push(date[1]);
+          break;
+        }
+        case 'D': { // 01
+          result.push(date[2]);
+          break;
+        }
+        case 'd': { // 1
+          result.push(date[2]);
+          break;
+        }
+        case 'H': { // 05
+          const time = date[4];
+          const hour = time[0] + time[1]
+          result.push(hour);
+          break;
+        }
+        case 'h': { // 5
+          const time = date[4];
+          const hour = time[1];
+          result.push(hour);
+          break;
+        }
+        case 'I': { // 08 mins
+          const time = date[4];
+          const min = time[3] + time[4];
+          result.push(min);
+          break;
+        }
+        case 'i': { // 8
+          const time = date[4];
+          const min = time[4];
+          result.push(min);
+          break;
+        }
+        case 'S': { // 04 secs
+          const time = date[4];
+          const sec = time[6] + time[7];
+          result.push(sec);
+          break;
+        }
+        case 's': { // 4
+          const time = date[4];
+          const sec = time[7];
+          result.push(sec);
+          break;
+        }
+        default: {
+          result.push(arr[i]);
+        }
+      }
+    }
+    return result.join('');
   }
 }
 
+const d = new MyDate();
+
+console.log(d.format("Y-M-D h:I:S"));
