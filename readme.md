@@ -4,6 +4,7 @@
 ![NPM](https://img.shields.io/npm/l/@ryanlsmith/date_lib)
 ![GitHub issues](https://img.shields.io/github/issues/ryanlsmith4/node_date_lib)
 [![Build Status](https://travis-ci.com/ryanlsmith4/node_date_lib.svg?branch=master)](https://travis-ci.com/ryanlsmith4/node_date_lib)
+[![forthebadge](https://forthebadge.com/images/badges/fuck-it-ship-it.svg)](https://forthebadge.com)
 
 ### Table of Contents
 
