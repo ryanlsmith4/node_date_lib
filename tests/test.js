@@ -5,11 +5,6 @@ const DateObj = require('../index');
 //   exports
 // import MyDate from '../index';
 
-console.log('---------------------')
-// console.log(MyDate)
-console.log('---------------------')
-
-
 test('Smoke test', () => {
   expect(true).toBe(true);
   expect(true).not.toBe(false);
@@ -29,5 +24,5 @@ test('Should only return the year', () => {
 test('Should only return the month', () => {
   const c = String(new Date()).split(' ');
   const d = new DateObj.MyDate();
-  expect(d.month()).toBe(String(c[1]));
+  expect(d.month()).toBe(c[1]);
 });
