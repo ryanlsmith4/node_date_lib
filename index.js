@@ -167,14 +167,38 @@ class MyDate {
    * @example MyDate.when() => todays date - date of constructed date object
    */
   when() {
-    const date = String(this.date).split(' ');
-    const today = new Date();
-    return this.date - today;
-    // console.log(date);
-    // console.log(today)
+    const now = new Date();
+
+    // Year difference
+    const nowYear = now.getFullYear();
+    const dateYear = this.date.getFullYear();
+    if (nowYear !== dateYear) {
+      if (nowYear < dateYear) {
+        return `${dateYear - nowYear} year${(dateYear - nowYear) === 1 ? '' : 's'} from now`;
+      }
+      return `${nowYear - dateYear} year${(nowYear - dateYear) === 1 ? '' : 's'} ago`;
+    }
+
+    // Month difference
+    const nowMonth = now.getMonth();
+    const dateMonth = this.date.getMonth();
+    if (nowMonth !== dateMonth) {
+      if (nowMonth < dateMonth) {
+        return `${dateMonth - nowMonth} month${(dateMonth - nowMonth) === 1 ? '' : 's'} from now`;
+      }
+      return `${nowMonth - dateMonth} month${(nowMonth - dateMonth) === 1 ? '' : 's'} ago`;
+    }
+
+    // Day difference
+    const nowDay = now.getDate();
+    const dateDay = this.date.getDate();
+    if (nowDay !== dateDay) {
+      if (nowDay < dateDay) {
+        return `${dateDay - nowDay} day${(dateDay - nowDay) === 1 ? '' : 's'} from now`;
+      }
+      return `${nowDay - dateDay} day${(nowDay - dateDay) === 1 ? '' : 's'} ago`;
+    }
+
+    return 'Today';
   }
 }
-
-const d = new MyDate(2019, 0, 2, 3, 4, 5);
-
-console.log(d.when());

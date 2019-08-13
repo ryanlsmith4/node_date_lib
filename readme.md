@@ -69,8 +69,7 @@ This method on my Date class returns the year of the date formatted as a string
 
 #### Parameters
 
--   `args` **...any**  
-can be in any format 'y/m/d', 'H:I:S', 'h:i:s', 'Y-M-D h:I:S'  to include all or not you choice
+-   `args` **...any** 
 
 #### Examples
 
