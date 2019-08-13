@@ -1,3 +1,4 @@
+
 /**
  * This class creates a Date obj out of an args array
  *@class
@@ -76,7 +77,7 @@ class MyDate {
   /**
    * This method on my Date class returns the year of the date formatted as a string
    * @method
-   * @params { String } can be in any format 'y/m/d', 'H:I:S', 'h:i:s', 'Y-M-D h:I:S' 
+   * @params { String } can be in any format 'y/m/d', 'H:I:S', 'h:i:s', 'Y-M-D h:I:S'
    * to include all or not you choice
    * @returns { String } formated Date with optional params
    * @example MyDate.format('y/m/d') => 2017/Jan/2 && MyDate.format('H:I:S') => 03:04:05
@@ -166,7 +167,7 @@ class MyDate {
    * @returns { String } formated Date with the time from today to the constructed date object
    * @example MyDate.when() => todays date - date of constructed date object
    */
-  when() {
+  when() { // Thanks to Ansel Bridgwater for this code snippet
     const now = new Date();
 
     // Year difference
@@ -202,3 +203,6 @@ class MyDate {
     return 'Today';
   }
 }
+
+// export default MyDate;
+module.exports.MyDate = MyDate;
